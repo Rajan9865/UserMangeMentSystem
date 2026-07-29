@@ -1,0 +1,227 @@
+<div class="app-layout">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+      </div>
+      <span class="sidebar-title">User<b>Hub</b></span>
+    </div>
+    <nav class="sidebar-nav">
+      <a routerLink="/dashboard" class="nav-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+          <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+        </svg>
+        <span>Dashboard</span>
+      </a>
+      <a routerLink="/users" class="nav-item active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+        <span>Users</span>
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="user-info">
+        <div class="user-avatar">{{ (username() || 'U')[0].toUpperCase() }}</div>
+        <div class="user-details">
+          <span class="user-name">{{ username() }}</span>
+          <span class="user-role">Administrator</span>
+        </div>
+      </div>
+      <button class="logout-btn" (click)="logout()" title="Logout">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+          <polyline points="16 17 21 12 16 7"/>
+          <line x1="21" y1="12" x2="9" y2="12"/>
+        </svg>
+      </button>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <!-- Breadcrumb Header -->
+    <header class="page-header">
+      <div>
+        <div class="breadcrumb">
+          <a routerLink="/users" class="breadcrumb-link">Users</a>
+          <span class="breadcrumb-sep">›</span>
+          <span>{{ isEditMode() ? 'Edit User' : 'New User' }}</span>
+        </div>
+        <h1 class="page-title">{{ isEditMode() ? 'Edit User' : 'Create New User' }}</h1>
+        <p class="page-subtitle">{{ isEditMode() ? 'Update user account details.' : 'Fill in the form below to create a new account.' }}</p>
+      </div>
+    </header>
+
+    <!-- Form Card -->
+    @if (loadingUser()) {
+      <div class="form-skeleton">
+        @for (i of [1,2,3,4,5]; track i) {
+          <div class="field-skeleton"></div>
+        }
+      </div>
+    } @else {
+      <div class="form-card">
+        <!-- Form Header Icon -->
+        <div class="form-icon-wrap">
+          <div class="form-icon" [class.icon-edit]="isEditMode()">
+            @if (isEditMode()) {
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+              </svg>
+            } @else {
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            }
+          </div>
+          <div>
+            <h2 class="form-card-title">{{ isEditMode() ? 'Edit Account' : 'New Account' }}</h2>
+            <p class="form-card-subtitle">{{ isEditMode() ? 'Modify the account information below' : 'Set up a new user account' }}</p>
+          </div>
+        </div>
+
+        <form (ngSubmit)="onSubmit()" #userForm="ngForm" novalidate>
+          <!-- Two-column grid -->
+          <div class="form-grid">
+            <!-- First Name -->
+            <div class="form-group" [class.has-error]="getError('firstName')">
+              <label class="form-label">First Name *</label>
+              <input
+                type="text"
+                class="form-input"
+                placeholder="Enter first name"
+                [(ngModel)]="form.firstName"
+                name="firstName"
+                required
+              />
+              @if (getError('firstName')) {
+                <span class="field-error">{{ getError('firstName') }}</span>
+              }
+            </div>
+
+            <!-- Last Name -->
+            <div class="form-group" [class.has-error]="getError('lastName')">
+              <label class="form-label">Last Name *</label>
+              <input
+                type="text"
+                class="form-input"
+                placeholder="Enter last name"
+                [(ngModel)]="form.lastName"
+                name="lastName"
+                required
+              />
+              @if (getError('lastName')) {
+                <span class="field-error">{{ getError('lastName') }}</span>
+              }
+            </div>
+          </div>
+
+          <!-- Username -->
+          <div class="form-group" [class.has-error]="getError('username')">
+            <label class="form-label">Username *</label>
+            <div class="input-with-prefix">
+              <span class="prefix">&#64;</span>
+              <input
+                type="text"
+                class="form-input prefix-input"
+                placeholder="username"
+                [(ngModel)]="form.username"
+                name="username"
+                required
+              />
+            </div>
+            @if (getError('username')) {
+              <span class="field-error">{{ getError('username') }}</span>
+            }
+          </div>
+
+          <!-- Email -->
+          <div class="form-group" [class.has-error]="getError('email')">
+            <label class="form-label">Email Address *</label>
+            <input
+              type="email"
+              class="form-input"
+              placeholder="user@example.com"
+              [(ngModel)]="form.email"
+              name="email"
+              required
+            />
+            @if (getError('email')) {
+              <span class="field-error">{{ getError('email') }}</span>
+            }
+          </div>
+
+          <!-- Password -->
+          <div class="form-group" [class.has-error]="getError('password')">
+            <label class="form-label">
+              Password @if (isEditMode()) { <span class="optional-tag">(leave blank to keep current)</span> }
+              @else { * }
+            </label>
+            <div class="input-wrapper">
+              <input
+                [type]="showPassword() ? 'text' : 'password'"
+                class="form-input"
+                placeholder="{{ isEditMode() ? 'Leave blank to keep current password' : 'Create a strong password' }}"
+                [(ngModel)]="form.password"
+                name="password"
+                [required]="!isEditMode()"
+              />
+              <button type="button" class="toggle-password" (click)="togglePassword()">
+                @if (showPassword()) {
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/>
+                    <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/>
+                    <line x1="1" y1="1" x2="23" y2="23"/>
+                  </svg>
+                } @else {
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                    <circle cx="12" cy="12" r="3"/>
+                  </svg>
+                }
+              </button>
+            </div>
+            @if (getError('password')) {
+              <span class="field-error">{{ getError('password') }}</span>
+            }
+          </div>
+
+          <!-- Actions -->
+          <div class="form-actions">
+            <a routerLink="/users" class="btn-back">Cancel</a>
+            <button type="submit" class="btn-submit" [disabled]="loading()">
+              @if (loading()) {
+                <span class="mini-spinner"></span>
+                <span>{{ isEditMode() ? 'Saving...' : 'Creating...' }}</span>
+              } @else {
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  @if (isEditMode()) {
+                    <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+                    <polyline points="17 21 17 13 7 13 7 21"/>
+                    <polyline points="7 3 7 8 15 8"/>
+                  } @else {
+                    <line x1="12" y1="5" x2="12" y2="19"/>
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                  }
+                </svg>
+                {{ isEditMode() ? 'Save Changes' : 'Create User' }}
+              }
+            </button>
+          </div>
+        </form>
+      </div>
+    }
+  </main>
+</div>

@@ -1,0 +1,34 @@
+# Maven build output (re-built inside Docker)
+target/
+
+# IDE files
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Git
+.git/
+.gitattributes
+.gitignore
+
+# Documentation
+README.md
+HELP.md
+
+# Logs
+logs/
+
+# Docker files themselves
+Dockerfile
+.dockerignore
+docker-compose.yml
+
+# Maven wrapper (not needed inside container)
+.mvn/
+mvnw
+mvnw.cmd
+
+# OS files
+.DS_Store
+Thumbs.db

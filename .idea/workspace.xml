@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5feadfcc-c318-4616-8faa-3a70b2d1b340" name="Changes" comment="usermangement systemmm" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_D:/IntellijeIdea/fullstack" value="3H8Ljv1GB1Tf1FEtU3ONlNBv7Fl" />
+    </persistenceIdMap>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Rajan9865&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Rajan9865/UserMangeMentSystem.git&quot;,
+    &quot;accountId&quot;: &quot;e445a527-f423-4361-aa23-aa2f63fc186c&quot;
+  }
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0" />
+      <entry key="S30" value="1.0" />
+      <entry key="S60" value="1.0" />
+      <entry key="M2" value="1.0" />
+      <entry key="M5" value="1.0" />
+      <entry key="M10" value="1.0" />
+      <entry key="M15" value="1.0000000000000207" />
+      <entry key="M30" value="1.0000005178429379" />
+      <entry key="H1" value="1.002594601333982" />
+      <entry key="H2" value="1.1836567850687794" />
+      <entry key="H4" value="2.545166062010219" />
+      <entry key="D1" value="10.11553129609492" />
+      <entry key="W1" value="13.357206381666263" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="0.0" />
+      <entry key="M5" value="0.0" />
+      <entry key="M10" value="0.0" />
+      <entry key="M15" value="0.0" />
+      <entry key="M30" value="0.0" />
+      <entry key="H1" value="0.0" />
+      <entry key="H2" value="0.0" />
+      <entry key="H4" value="0.0" />
+      <entry key="D1" value="0.0" />
+      <entry key="W1" value="0.0" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.9075191553171609" />
+      <entry key="MS500" value="0.9807790039885513" />
+      <entry key="S2" value="0.9951597218200828" />
+      <entry key="S5" value="0.9980610700524115" />
+      <entry key="S10" value="0.9990300646389034" />
+      <entry key="S30" value="0.9996765836260931" />
+      <entry key="S60" value="0.9998382787361629" />
+      <entry key="M2" value="0.9999191360985962" />
+      <entry key="M5" value="0.9999676536547282" />
+      <entry key="M10" value="0.9999838266965763" />
+      <entry key="M15" value="0.999989217768674" />
+      <entry key="M30" value="0.9999951267085613" />
+      <entry key="H1" value="1.0025918953144741" />
+      <entry key="H2" value="1.183655067378577" />
+      <entry key="H4" value="2.545163831986927" />
+      <entry key="D1" value="10.115529653691764" />
+      <entry key="W1" value="13.357206069302457" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="3H8LjxPkEstmz3zzkG8Bmvxm9xG" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "Spring Boot.UserManagementSystemApplication.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "copilot.chat.legacySessionMetadata.migrated": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/IntellijeIdea/fullstack",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable",
+    "ts.external.directory.path": "D:\\IntellijeIdea\\fullstack\\ums-frontend\\node_modules\\typescript\\lib"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="UserManagementSystemApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
+      <module name="user-management-system" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.usermanagement.user_management_system.UserManagementSystemApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.usermanagement.user_management_system.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.UserManagementSystemApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-63390994e64e-intellij.indexing.shared.core-IU-262.8665.337" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.8665.337" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5feadfcc-c318-4616-8faa-3a70b2d1b340" name="Changes" comment="" />
+      <created>1785244887455</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1785244887455</updated>
+    </task>
+    <task id="LOCAL-00001" summary="usermangement system">
+      <option name="closed" value="true" />
+      <created>1785245683446</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1785245683446</updated>
+    </task>
+    <task id="LOCAL-00002" summary="usermangement system">
+      <option name="closed" value="true" />
+      <created>1785245686022</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1785245686022</updated>
+    </task>
+    <task id="LOCAL-00003" summary="usermangement system">
+      <option name="closed" value="true" />
+      <created>1785245688007</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1785245688007</updated>
+    </task>
+    <task id="LOCAL-00004" summary="usermangement system">
+      <option name="closed" value="true" />
+      <created>1785245699302</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1785245699302</updated>
+    </task>
+    <task id="LOCAL-00005" summary="usermangement system">
+      <option name="closed" value="true" />
+      <created>1785245700066</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1785245700066</updated>
+    </task>
+    <task id="LOCAL-00006" summary="usermangement system">
+      <option name="closed" value="true" />
+      <created>1785245700585</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1785245700585</updated>
+    </task>
+    <task id="LOCAL-00007" summary="usermangement system">
+      <option name="closed" value="true" />
+      <created>1785245716102</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1785245716102</updated>
+    </task>
+    <task id="LOCAL-00008" summary="usermangement system">
+      <option name="closed" value="true" />
+      <created>1785245730375</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1785245730375</updated>
+    </task>
+    <task id="LOCAL-00009" summary="usermangement system">
+      <option name="closed" value="true" />
+      <created>1785245731328</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1785245731328</updated>
+    </task>
+    <task id="LOCAL-00010" summary="usermangement system">
+      <option name="closed" value="true" />
+      <created>1785245791763</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1785245791763</updated>
+    </task>
+    <task id="LOCAL-00011" summary="usermangement system">
+      <option name="closed" value="true" />
+      <created>1785245858896</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1785245858896</updated>
+    </task>
+    <task id="LOCAL-00012" summary="usermangement system">
+      <option name="closed" value="true" />
+      <created>1785245859805</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1785245859805</updated>
+    </task>
+    <task id="LOCAL-00013" summary="usermangement system">
+      <option name="closed" value="true" />
+      <created>1785245860316</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1785245860316</updated>
+    </task>
+    <task id="LOCAL-00014" summary="usermangement system">
+      <option name="closed" value="true" />
+      <created>1785245860675</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1785245860675</updated>
+    </task>
+    <task id="LOCAL-00015" summary="usermangement system">
+      <option name="closed" value="true" />
+      <created>1785245861471</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1785245861471</updated>
+    </task>
+    <task id="LOCAL-00016" summary="usermangement system">
+      <option name="closed" value="true" />
+      <created>1785245861868</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1785245861868</updated>
+    </task>
+    <task id="LOCAL-00017" summary="usermangement system">
+      <option name="closed" value="true" />
+      <created>1785245862114</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1785245862114</updated>
+    </task>
+    <task id="LOCAL-00018" summary="usermangement system">
+      <option name="closed" value="true" />
+      <created>1785245862419</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1785245862419</updated>
+    </task>
+    <task id="LOCAL-00019" summary="usermangement systemmm">
+      <option name="closed" value="true" />
+      <created>1785289759769</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1785289759769</updated>
+    </task>
+    <task id="LOCAL-00020" summary="usermangement systemmm">
+      <option name="closed" value="true" />
+      <created>1785289812180</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1785289812180</updated>
+    </task>
+    <task id="LOCAL-00021" summary="usermangement systemmm">
+      <option name="closed" value="true" />
+      <created>1785289822336</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1785289822336</updated>
+    </task>
+    <task id="LOCAL-00022" summary="usermangement systemmm">
+      <option name="closed" value="true" />
+      <created>1785289823729</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1785289823729</updated>
+    </task>
+    <task id="LOCAL-00023" summary="usermangement systemmm">
+      <option name="closed" value="true" />
+      <created>1785289841138</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1785289841138</updated>
+    </task>
+    <task id="LOCAL-00024" summary="usermangement systemmm">
+      <option name="closed" value="true" />
+      <created>1785289842088</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1785289842088</updated>
+    </task>
+    <task id="LOCAL-00025" summary="usermangement systemmm">
+      <option name="closed" value="true" />
+      <created>1785289843236</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1785289843236</updated>
+    </task>
+    <task id="LOCAL-00026" summary="usermangement systemmm">
+      <option name="closed" value="true" />
+      <created>1785289844141</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1785289844141</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="usermangement system" />
+    <MESSAGE value="usermangement systemmm" />
+    <option name="LAST_COMMIT_MESSAGE" value="usermangement systemmm" />
+  </component>
+</project>
