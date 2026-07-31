@@ -38,6 +38,18 @@ export const routes: Routes = [
       import('./pages/users/user-form/user-form.component').then(m => m.UserFormComponent)
   },
   {
+    path: 'profile',
+    canActivate: [authGuard],
+    loadComponent: () =>
+      import('./pages/profile/profile.component').then(m => m.ProfileComponent)
+  },
+  {
+    path: 'audit-logs',
+    canActivate: [authGuard],
+    loadComponent: () =>
+      import('./pages/audit-log/audit-log.component').then(m => m.AuditLogComponent)
+  },
+  {
     path: '**',
     redirectTo: 'dashboard'
   }
