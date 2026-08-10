@@ -2,6 +2,8 @@ package com.usermanagement.user_management_system.service.impl;
 
 import com.usermanagement.user_management_system.dto.UserRequestDto;
 import com.usermanagement.user_management_system.dto.UserResponseDto;
+import com.usermanagement.user_management_system.dto.request.ChangePasswordRequest;
+import com.usermanagement.user_management_system.dto.request.UpdateProfileRequest;
 import com.usermanagement.user_management_system.enums.Role;
 import com.usermanagement.user_management_system.exception.InvalidUserException;
 import com.usermanagement.user_management_system.exception.UserNotFoundException;
@@ -101,5 +103,17 @@ public class CollectionUserService implements UserService {
     @Override
     public UserResponseDto updateUserRole(Long id, Role role) {
         return null;
+    }
+
+    @Override
+    public void changePassword(Long id, ChangePasswordRequest request) {
+        // Not supported in in-memory mode
+        throw new UnsupportedOperationException("changePassword is not supported in memory profile");
+    }
+
+    @Override
+    public UserResponseDto updateProfile(Long id, UpdateProfileRequest request) {
+        // Not supported in in-memory mode
+        throw new UnsupportedOperationException("updateProfile is not supported in memory profile");
     }
 }
