@@ -1,6 +1,7 @@
 package com.usermanagement.user_management_system.service;
 
 import com.usermanagement.user_management_system.auth.dto.RefreshTokenRequest;
+import com.usermanagement.user_management_system.dto.request.ChangePasswordRequest;
 import com.usermanagement.user_management_system.dto.request.LoginRequest;
 import com.usermanagement.user_management_system.dto.response.LoginResponse;
 
@@ -14,4 +15,5 @@ public interface AuthServices{
     LoginResponse login(LoginRequest request);
     LoginResponse refreshToken(RefreshTokenRequest request);
     void logout();
+    void changePassword(ChangePasswordRequest request);
 }
