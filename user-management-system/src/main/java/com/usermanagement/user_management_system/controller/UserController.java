@@ -2,6 +2,8 @@ package com.usermanagement.user_management_system.controller;
 
 import com.usermanagement.user_management_system.dto.UserRequestDto;
 import com.usermanagement.user_management_system.dto.UserResponseDto;
+import com.usermanagement.user_management_system.dto.request.ChangePasswordRequest;
+import com.usermanagement.user_management_system.dto.request.UpdateProfileRequest;
 import com.usermanagement.user_management_system.enums.Role;
 import com.usermanagement.user_management_system.service.UserService;
 import com.usermanagement.user_management_system.util.ApiResult;
@@ -30,7 +32,7 @@ import java.util.List;
  * Practise_Project
  * @since 7/16/2026
  */
-@SecurityRequirement(name="basicAuth")
+@SecurityRequirement(name = "bearerAuth")
 @Tag(name = "User API",description = "Operations related to User Management")
 @RestController
 @RequestMapping("/api/users")
@@ -67,7 +69,7 @@ public class UserController {
 
     @Operation(summary = "Get User By Id")
     @GetMapping("/{id}")
-    @PreAuthorize("hasAnyRole('USER','ADMIN')")
+    @PreAuthorize("hasAnyRole('ADMIN', 'MODERATOR', 'USER')")
     public ResponseEntity<ApiResult<UserResponseDto>> getUserById(
             @PathVariable Long id, HttpServletRequest request) {
         UserResponseDto response = userService.getUserById(id);
@@ -96,6 +98,7 @@ public class UserController {
 //    }
     @Operation(summary = "get all users")
     @GetMapping
+    @PreAuthorize("hasAnyRole('ADMIN', 'MODERATOR','USER')")
     public ResponseEntity<ApiResult<Page<UserResponseDto>>> getAllUsers(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "5") int size,
@@ -120,7 +123,7 @@ public class UserController {
      */
     @Operation(summary = "Update User")
     @PutMapping("/{id}")
-    @PreAuthorize("hasAnyRole('USER','ADMIN')")
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<ApiResult<UserResponseDto>> updateUser(
             @PathVariable Long id,
             @Valid @RequestBody UserRequestDto request,
@@ -154,6 +157,7 @@ public class UserController {
      */
     @Operation(summary = "search users")
     @GetMapping("search")
+    @PreAuthorize("hasAnyRole('ADMIN', 'MODERATOR', 'USER')")
     public ResponseEntity<ApiResult<List<UserResponseDto>>> searchUsers(
             @RequestParam String username,
             HttpServletRequest request
@@ -179,5 +183,53 @@ public class UserController {
         "User role updated successfully",
                 HttpStatus.OK,
                 request.getRequestURI()));
+    }
+
+    /**
+     * Change Password
+     */
+    @Operation(summary = "Change user password",
+            description = "Allows a user to change their own password by providing the current and new password.")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "Password changed successfully"),
+            @ApiResponse(responseCode = "400", description = "Current password is wrong or new password is same as current"),
+            @ApiResponse(responseCode = "404", description = "User not found")
+    })
+    @PatchMapping("/{id}/password")
+    @PreAuthorize("hasAnyRole('ADMIN', 'MODERATOR', 'USER')")
+    public ResponseEntity<ApiResult<Object>> changePassword(
+            @PathVariable Long id,
+            @Valid @RequestBody ChangePasswordRequest request,
+            HttpServletRequest httpRequest) {
+        userService.changePassword(id, request);
+        return ResponseEntity.ok(ResponseUtil.success(
+                null,
+                "Password changed successfully.",
+                HttpStatus.OK,
+                httpRequest.getRequestURI()));
+    }
+
+    /**
+     * Update own profile (firstName, lastName, email only)
+     */
+    @Operation(summary = "Update user profile",
+            description = "Allows a user to update their own firstName, lastName and email.")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "Profile updated successfully"),
+            @ApiResponse(responseCode = "400", description = "Validation failed"),
+            @ApiResponse(responseCode = "404", description = "User not found")
+    })
+    @PatchMapping("/{id}/profile")
+    @PreAuthorize("hasAnyRole('ADMIN', 'MODERATOR', 'USER')")
+    public ResponseEntity<ApiResult<UserResponseDto>> updateProfile(
+            @PathVariable Long id,
+            @Valid @RequestBody UpdateProfileRequest request,
+            HttpServletRequest httpRequest) {
+        UserResponseDto response = userService.updateProfile(id, request);
+        return ResponseEntity.ok(ResponseUtil.success(
+                response,
+                "Profile updated successfully.",
+                HttpStatus.OK,
+                httpRequest.getRequestURI()));
     }
 }
