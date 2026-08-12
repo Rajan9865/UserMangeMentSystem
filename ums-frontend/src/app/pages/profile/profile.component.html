@@ -1,0 +1,488 @@
+<div class="app-layout">
+  <app-sidebar />
+
+  <main class="main-content">
+
+    <!-- ── Page Header ─────────────────────────────────── -->
+    <div class="page-header">
+      <div>
+        <h1 class="page-title">My Profile</h1>
+        <p class="page-subtitle">View and manage your account details</p>
+      </div>
+    </div>
+
+    <!-- ── Skeleton ────────────────────────────────────── -->
+    <ng-container *ngIf="loading()">
+      <div class="hero-skeleton section-card"></div>
+      <div class="body-skeleton section-card"></div>
+    </ng-container>
+
+    <!-- ── Loaded ──────────────────────────────────────── -->
+    <ng-container *ngIf="!loading() && user() as u">
+
+      <!-- Hero Banner -->
+      <div class="hero-card section-card">
+        <!-- Decorative blobs -->
+        <div class="hero-blob hero-blob-1"></div>
+        <div class="hero-blob hero-blob-2"></div>
+
+        <div class="hero-left">
+          <!-- Avatar -->
+          <div class="hero-avatar" [style.--role-color]="roleColor()">
+            {{ initials() }}
+            <span class="avatar-ring"></span>
+          </div>
+
+          <!-- Name & meta -->
+          <div class="hero-meta">
+            <h2 class="hero-name">{{ fullName() || u.username }}</h2>
+            <p class="hero-username">&#64;{{ u.username }}</p>
+            <div class="hero-badges">
+              <span class="role-badge" [style.--role-color]="roleColor()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                {{ rolePretty() }}
+              </span>
+              <span class="active-badge">
+                <span class="active-dot"></span>
+                Active
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats row -->
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-value">{{ u.firstName }}</span>
+            <span class="hero-stat-label">First Name</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">{{ u.lastName }}</span>
+            <span class="hero-stat-label">Last Name</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-value email-val">{{ u.email }}</span>
+            <span class="hero-stat-label">Email</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Tab Nav ──────────────────────────────────── -->
+      <div class="tab-nav">
+        <button
+          class="tab-btn"
+          [class.active]="activeTab() === 'details'"
+          (click)="setTab('details')"
+          id="tab-details"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          Profile Details
+        </button>
+        <button
+          class="tab-btn"
+          [class.active]="activeTab() === 'password'"
+          (click)="setTab('password')"
+          id="tab-password"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+          Change Password
+        </button>
+      </div>
+
+      <!-- ════════════════ TAB: DETAILS ═══════════════ -->
+      <div class="section-card tab-panel" *ngIf="activeTab() === 'details'">
+
+        <!-- Card header -->
+        <div class="panel-header">
+          <div class="panel-header-left">
+            <div class="panel-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="panel-title">Personal Information</h3>
+              <p class="panel-subtitle">Update your name and email address</p>
+            </div>
+          </div>
+          <div class="panel-actions">
+            <button *ngIf="!editMode()" class="btn-edit" (click)="enterEdit()" id="btn-edit-profile">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+              </svg>
+              Edit
+            </button>
+          </div>
+        </div>
+
+        <!-- Profile success banner -->
+        <div *ngIf="profileSuccessAnim()" class="success-banner">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M20 6L9 17l-5-5"/>
+          </svg>
+          <span>Profile updated successfully!</span>
+        </div>
+
+        <!-- ── Read-only view ── -->
+        <div *ngIf="!editMode()" class="info-grid">
+          <div class="info-item">
+            <div class="info-icon-wrap info-icon-purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            <div class="info-content">
+              <span class="info-label">First Name</span>
+              <span class="info-value">{{ u.firstName }}</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon-wrap info-icon-pink">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            <div class="info-content">
+              <span class="info-label">Last Name</span>
+              <span class="info-value">{{ u.lastName }}</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon-wrap info-icon-blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div class="info-content">
+              <span class="info-label">Email Address</span>
+              <span class="info-value">{{ u.email }}</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon-wrap info-icon-amber">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            <div class="info-content">
+              <span class="info-label">Username</span>
+              <span class="info-value">&#64;{{ u.username }}
+                <span class="readonly-chip">Read-only</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon-wrap info-icon-green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div class="info-content">
+              <span class="info-label">Role</span>
+              <span class="info-value">
+                <span class="role-inline" [style.color]="roleColor()">{{ rolePretty() }}</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon-wrap info-icon-teal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+            </div>
+            <div class="info-content">
+              <span class="info-label">Account ID</span>
+              <span class="info-value">#{{ u.id }}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Edit Form ── -->
+        <form *ngIf="editMode()" [formGroup]="profileForm" (ngSubmit)="saveProfile()" novalidate class="edit-form">
+          <div class="form-row">
+            <!-- First Name -->
+            <div class="form-group">
+              <label class="form-label" for="firstName">First Name</label>
+              <div class="input-wrap">
+                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                </svg>
+                <input id="firstName" class="form-input" type="text" formControlName="firstName" placeholder="First name" />
+              </div>
+              <div *ngIf="pf['firstName'].touched && pf['firstName'].errors?.['required']" class="field-error">
+                First name is required.
+              </div>
+            </div>
+
+            <!-- Last Name -->
+            <div class="form-group">
+              <label class="form-label" for="lastName">Last Name</label>
+              <div class="input-wrap">
+                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                </svg>
+                <input id="lastName" class="form-input" type="text" formControlName="lastName" placeholder="Last name" />
+              </div>
+              <div *ngIf="pf['lastName'].touched && pf['lastName'].errors?.['required']" class="field-error">
+                Last name is required.
+              </div>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label class="form-label" for="email">Email Address</label>
+            <div class="input-wrap">
+              <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <input id="email" class="form-input" type="email" formControlName="email" placeholder="your@email.com" />
+            </div>
+            <div *ngIf="pf['email'].touched && pf['email'].errors?.['required']" class="field-error">
+              Email is required.
+            </div>
+            <div *ngIf="pf['email'].touched && pf['email'].errors?.['email']" class="field-error">
+              Enter a valid email address.
+            </div>
+          </div>
+
+          <!-- Username (read-only) -->
+          <div class="form-group">
+            <label class="form-label">Username <span class="readonly-chip">Read-only</span></label>
+            <div class="input-wrap">
+              <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+              </svg>
+              <input class="form-input form-input--readonly" type="text" [value]="u.username" readonly />
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn-cancel" (click)="cancelEdit()" id="btn-cancel-profile">
+              Cancel
+            </button>
+            <button
+              type="submit"
+              class="submit-btn"
+              [disabled]="profileForm.invalid || profileForm.pristine || savingProfile()"
+              id="btn-save-profile"
+            >
+              <span *ngIf="!savingProfile()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+                Save Changes
+              </span>
+              <span *ngIf="savingProfile()" class="spinner-wrap">
+                <span class="btn-spinner"></span>
+                Saving…
+              </span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- ════════════════ TAB: PASSWORD ══════════════ -->
+      <div class="section-card tab-panel" *ngIf="activeTab() === 'password'">
+        <div class="panel-header">
+          <div class="panel-header-left">
+            <div class="panel-icon panel-icon--purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="panel-title">Change Password</h3>
+              <p class="panel-subtitle">Keep your account secure with a strong password</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Security tips -->
+        <div class="security-tips">
+          <div class="tip"><span class="tip-dot"></span>At least 6 characters</div>
+          <div class="tip"><span class="tip-dot"></span>Mix uppercase &amp; lowercase</div>
+          <div class="tip"><span class="tip-dot"></span>Include numbers &amp; symbols</div>
+        </div>
+
+        <!-- Success banner -->
+        <div *ngIf="pwSuccessAnim()" class="success-banner">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M20 6L9 17l-5-5"/>
+          </svg>
+          <span>Password updated successfully!</span>
+        </div>
+
+        <!-- Password form -->
+        <form
+          *ngIf="!pwSuccessAnim()"
+          [formGroup]="passwordForm"
+          (ngSubmit)="changePassword()"
+          novalidate
+          class="edit-form"
+        >
+          <!-- Current Password -->
+          <div class="form-group">
+            <label class="form-label" for="currentPassword">Current Password</label>
+            <div class="input-wrap">
+              <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+              <input
+                id="currentPassword"
+                class="form-input"
+                [type]="showCurrent() ? 'text' : 'password'"
+                formControlName="currentPassword"
+                placeholder="Enter current password"
+                autocomplete="current-password"
+              />
+              <button type="button" class="eye-btn" (click)="toggleShow('current')" tabindex="-1">
+                <svg *ngIf="!showCurrent()" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+                </svg>
+                <svg *ngIf="showCurrent()" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/>
+                  <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/>
+                  <line x1="1" y1="1" x2="23" y2="23"/>
+                </svg>
+              </button>
+            </div>
+            <div *ngIf="wf['currentPassword'].touched && wf['currentPassword'].errors?.['required']" class="field-error">
+              Current password is required.
+            </div>
+          </div>
+
+          <!-- New Password -->
+          <div class="form-group">
+            <label class="form-label" for="newPassword">New Password</label>
+            <div class="input-wrap">
+              <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+              <input
+                id="newPassword"
+                class="form-input"
+                [type]="showNew() ? 'text' : 'password'"
+                formControlName="newPassword"
+                placeholder="At least 6 characters"
+                autocomplete="new-password"
+              />
+              <button type="button" class="eye-btn" (click)="toggleShow('new')" tabindex="-1">
+                <svg *ngIf="!showNew()" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+                </svg>
+                <svg *ngIf="showNew()" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/>
+                  <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/>
+                  <line x1="1" y1="1" x2="23" y2="23"/>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Strength meter -->
+            <ng-container *ngIf="wf['newPassword'].value as pw">
+              <div class="strength-bar-row">
+                <div class="strength-bars">
+                  <div
+                    class="strength-bar"
+                    *ngFor="let i of [1,2,3,4]"
+                    [style.background]="getPasswordStrength(pw).level >= i ? getPasswordStrength(pw).color : 'rgba(255,255,255,0.08)'"
+                  ></div>
+                </div>
+                <span class="strength-label" [style.color]="getPasswordStrength(pw).color">
+                  {{ getPasswordStrength(pw).label }}
+                </span>
+              </div>
+            </ng-container>
+
+            <div *ngIf="wf['newPassword'].touched && wf['newPassword'].errors?.['required']" class="field-error">
+              New password is required.
+            </div>
+            <div *ngIf="wf['newPassword'].touched && wf['newPassword'].errors?.['minlength']" class="field-error">
+              Password must be at least 6 characters.
+            </div>
+            <div *ngIf="wf['newPassword'].touched && passwordForm.errors?.['sameasCurrent']" class="field-error">
+              New password must differ from the current one.
+            </div>
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="form-group">
+            <label class="form-label" for="confirmPassword">Confirm New Password</label>
+            <div class="input-wrap">
+              <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 6L9 17l-5-5"/>
+              </svg>
+              <input
+                id="confirmPassword"
+                class="form-input"
+                [type]="showConfirm() ? 'text' : 'password'"
+                formControlName="confirmPassword"
+                placeholder="Re-enter new password"
+                autocomplete="new-password"
+              />
+              <button type="button" class="eye-btn" (click)="toggleShow('confirm')" tabindex="-1">
+                <svg *ngIf="!showConfirm()" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+                </svg>
+                <svg *ngIf="showConfirm()" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/>
+                  <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/>
+                  <line x1="1" y1="1" x2="23" y2="23"/>
+                </svg>
+              </button>
+            </div>
+            <div *ngIf="wf['confirmPassword'].touched && wf['confirmPassword'].errors?.['required']" class="field-error">
+              Please confirm your new password.
+            </div>
+            <div *ngIf="wf['confirmPassword'].touched && passwordForm.errors?.['mismatch']" class="field-error">
+              Passwords do not match.
+            </div>
+          </div>
+
+          <button
+            id="change-password-submit"
+            type="submit"
+            class="submit-btn"
+            [disabled]="passwordForm.invalid || submittingPw()"
+          >
+            <span *ngIf="!submittingPw()">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+              Update Password
+            </span>
+            <span *ngIf="submittingPw()" class="spinner-wrap">
+              <span class="btn-spinner"></span>
+              Saving…
+            </span>
+          </button>
+        </form>
+      </div>
+
+    </ng-container>
+  </main>
+</div>

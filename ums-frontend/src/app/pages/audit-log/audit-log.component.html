@@ -1,0 +1,281 @@
+<div class="app-layout">
+  <app-sidebar />
+
+  <main class="main-content">
+
+    <!-- ── Page Header ─────────────────────────────────── -->
+    <div class="page-header">
+      <div>
+        <h1 class="page-title">Activity Log</h1>
+        <p class="page-subtitle">Real-time audit trail of all user management actions</p>
+      </div>
+      <button class="btn-refresh" (click)="refresh()" id="btn-refresh-logs" title="Refresh">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="23 4 23 10 17 10"/>
+          <polyline points="1 20 1 14 7 14"/>
+          <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+        </svg>
+        Refresh
+      </button>
+    </div>
+
+    <!-- ── Stats Row ────────────────────────────────────── -->
+    <div class="stats-row">
+      <div class="stat-card stat-card--total">
+        <div class="stat-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+          </svg>
+        </div>
+        <div class="stat-body">
+          <span class="stat-value">{{ stats().total }}</span>
+          <span class="stat-label">Total Events</span>
+        </div>
+      </div>
+
+      <div class="stat-card stat-card--created">
+        <div class="stat-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
+          </svg>
+        </div>
+        <div class="stat-body">
+          <span class="stat-value">{{ stats().created }}</span>
+          <span class="stat-label">Users Created</span>
+        </div>
+      </div>
+
+      <div class="stat-card stat-card--deleted">
+        <div class="stat-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/>
+            <path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/>
+          </svg>
+        </div>
+        <div class="stat-body">
+          <span class="stat-value">{{ stats().deleted }}</span>
+          <span class="stat-label">Users Deleted</span>
+        </div>
+      </div>
+
+      <div class="stat-card stat-card--role">
+        <div class="stat-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div class="stat-body">
+          <span class="stat-value">{{ stats().roleChange }}</span>
+          <span class="stat-label">Role Changes</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Toolbar ──────────────────────────────────────── -->
+    <div class="toolbar">
+      <!-- Search -->
+      <div class="search-wrap">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input
+          id="audit-search"
+          class="search-input"
+          type="text"
+          [(ngModel)]="searchInput"
+          (keyup.enter)="onSearch()"
+          placeholder="Search by username or actor…"
+        />
+        <button *ngIf="searchInput" class="search-clear" (click)="clearSearch()" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+        <button class="search-btn" (click)="onSearch()" type="button">Search</button>
+      </div>
+
+      <!-- Sort toggle -->
+      <button class="sort-btn" (click)="toggleSort()" id="btn-sort-logs">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/>
+          <line x1="8" y1="18" x2="21" y2="18"/>
+          <polyline *ngIf="sortDir() === 'desc'" points="3 8 3 3 3 8"><path d="M3 3v12l3-3m-3 3l-3-3"/></polyline>
+          <polyline *ngIf="sortDir() === 'asc'"  points="3 16 3 21 3 16"><path d="M3 21V9l3 3M3 9l-3 3"/></polyline>
+        </svg>
+        {{ sortDir() === 'desc' ? 'Newest First' : 'Oldest First' }}
+      </button>
+    </div>
+
+    <!-- ── Results meta ─────────────────────────────────── -->
+    <div class="results-meta" *ngIf="!loading() && totalElements() > 0">
+      Showing <strong>{{ logs().length }}</strong> of <strong>{{ totalElements() }}</strong> events
+      <span *ngIf="searchQuery()"> for &ldquo;<em>{{ searchQuery() }}</em>&rdquo;</span>
+    </div>
+
+    <!-- ── Loading skeleton ─────────────────────────────── -->
+    <div class="timeline" *ngIf="loading()">
+      <div class="timeline-entry skeleton-entry" *ngFor="let s of skeletonRows">
+        <div class="tl-avatar-col">
+          <div class="tl-dot skeleton-dot"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="log-card skeleton-card">
+          <div class="sk-line sk-line--wide"></div>
+          <div class="sk-line sk-line--mid"></div>
+          <div class="sk-line sk-line--narrow"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Empty state ──────────────────────────────────── -->
+    <div class="empty-state" *ngIf="!loading() && logs().length === 0">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+        <line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+      </svg>
+      <h3>No activity found</h3>
+      <p *ngIf="searchQuery()">No events match &ldquo;{{ searchQuery() }}&rdquo;. Try a different search.</p>
+      <p *ngIf="!searchQuery()">User management actions will appear here as they happen.</p>
+      <button *ngIf="searchQuery()" class="btn-primary" (click)="clearSearch()">Clear Search</button>
+    </div>
+
+    <!-- ── Timeline ─────────────────────────────────────── -->
+    <div class="timeline" *ngIf="!loading() && logs().length > 0">
+      <div
+        class="timeline-entry"
+        *ngFor="let log of logs(); let last = last; let i = index"
+        [style.animation-delay]="(i * 50) + 'ms'"
+      >
+        <!-- Avatar + connector line -->
+        <div class="tl-avatar-col">
+          <div
+            class="tl-dot"
+            [style.background]="getActionConfig(log.action).color"
+            [style.box-shadow]="'0 0 10px ' + getActionConfig(log.action).color + '60'"
+          >
+            <!-- Created -->
+            <svg *ngIf="log.action === 'USER_CREATED'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
+            </svg>
+            <!-- Updated -->
+            <svg *ngIf="log.action === 'USER_UPDATED'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+            </svg>
+            <!-- Deleted -->
+            <svg *ngIf="log.action === 'USER_DELETED'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/>
+            </svg>
+            <!-- Role Changed -->
+            <svg *ngIf="log.action === 'USER_ROLE_CHANGED'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            <!-- Password -->
+            <svg *ngIf="log.action === 'PASSWORD_CHANGED'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <!-- Profile -->
+            <svg *ngIf="log.action === 'PROFILE_UPDATED'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <div class="tl-line" *ngIf="!last"></div>
+        </div>
+
+        <!-- Log Card -->
+        <div
+          class="log-card"
+          [style.--action-color]="getActionConfig(log.action).color"
+          [style.--action-bg]="getActionConfig(log.action).bg"
+          [style.--action-border]="getActionConfig(log.action).border"
+        >
+          <div class="log-card-main">
+            <!-- Left: action badge + description -->
+            <div class="log-card-left">
+              <span
+                class="action-badge"
+                [style.background]="getActionConfig(log.action).bg"
+                [style.color]="getActionConfig(log.action).color"
+                [style.border-color]="getActionConfig(log.action).border"
+              >
+                {{ getActionConfig(log.action).label }}
+              </span>
+
+              <p class="log-description">
+                <span class="log-username">&#64;{{ log.targetUsername }}</span>
+                {{ getActionConfig(log.action).verb }}
+              </p>
+
+              <p class="log-details" *ngIf="log.details">{{ log.details }}</p>
+            </div>
+
+            <!-- Right: actor + time -->
+            <div class="log-card-right">
+              <div class="log-actor">
+                <div class="log-actor-avatar">{{ getInitials(log.performedBy) }}</div>
+                <span class="log-actor-name">&#64;{{ log.performedBy }}</span>
+              </div>
+              <div class="log-time" [title]="formatTime(log.timestamp)">
+                {{ timeAgo(log.timestamp) }}
+              </div>
+              <div class="log-timestamp">{{ formatTime(log.timestamp) }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Pagination ────────────────────────────────────── -->
+    <div class="pagination" *ngIf="!loading() && totalPages() > 1">
+      <button
+        class="page-btn page-btn--nav"
+        [disabled]="currentPage() === 0"
+        (click)="goToPage(currentPage() - 1)"
+        id="btn-prev-page"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+        Prev
+      </button>
+
+      <ng-container *ngIf="totalPages() <= 7; else smartPages">
+        <button
+          *ngFor="let p of pages"
+          class="page-btn"
+          [class.active]="p === currentPage()"
+          (click)="goToPage(p)"
+        >{{ p + 1 }}</button>
+      </ng-container>
+
+      <ng-template #smartPages>
+        <button *ngIf="visiblePages[0] > 0" class="page-btn" (click)="goToPage(0)">1</button>
+        <span *ngIf="visiblePages[0] > 1" class="page-ellipsis">…</span>
+        <button
+          *ngFor="let p of visiblePages"
+          class="page-btn"
+          [class.active]="p === currentPage()"
+          (click)="goToPage(p)"
+        >{{ p + 1 }}</button>
+        <span *ngIf="visiblePages[visiblePages.length - 1] < totalPages() - 2" class="page-ellipsis">…</span>
+        <button *ngIf="visiblePages[visiblePages.length - 1] < totalPages() - 1" class="page-btn" (click)="goToPage(totalPages() - 1)">{{ totalPages() }}</button>
+      </ng-template>
+
+      <button
+        class="page-btn page-btn--nav"
+        [disabled]="currentPage() === totalPages() - 1"
+        (click)="goToPage(currentPage() + 1)"
+        id="btn-next-page"
+      >
+        Next
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+    </div>
+
+  </main>
+</div>
