@@ -24,22 +24,22 @@ public class CorsConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
 
-        // ✅ Allow Angular dev server origin
+        // Allow Angular dev server origin
         config.setAllowedOrigins(List.of(
                 "http://localhost:4200",
-                "http://localhost:3000"   // in case any other frontend
+                "http://localhost:3000"
         ));
 
-        // ✅ Allow all standard HTTP methods
+        // Allow all standard HTTP methods
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"));
 
-        // ✅ Allow all headers (including Authorization for JWT)
+        // Allow all headers (including Authorization for JWT)
         config.setAllowedHeaders(List.of("*"));
 
-        // ✅ Allow cookies / Authorization header to be sent
+        // Allow cookies / Authorization header to be sent
         config.setAllowCredentials(true);
 
-        // ✅ Cache preflight response for 1 hour
+        // Cache preflight response for 1 hour
         config.setMaxAge(3600L);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
