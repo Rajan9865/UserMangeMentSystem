@@ -1,5 +1,5 @@
-// Shares styles with dashboard (sidebar/layout reused)
-@use '../../../pages/dashboard/dashboard.component' as *;
+// Shared layout/sidebar/table styles are in src/styles.scss (global).
+// Only user-list-specific styles below.
 
 // =====================
 // Search Bar
