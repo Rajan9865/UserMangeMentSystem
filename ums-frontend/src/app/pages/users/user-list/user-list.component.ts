@@ -3,23 +3,20 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { UserService } from '../../../core/services/user.service';
-import { AuthService } from '../../../core/services/auth.service';
 import { ToastService } from '../../../core/services/toast.service';
 import { UserResponse, Role } from '../../../models/user.model';
+import { SidebarComponent } from '../../../shared/sidebar/sidebar.component';
 
 @Component({
   selector: 'app-user-list',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink],
+  imports: [CommonModule, FormsModule, RouterLink, SidebarComponent],
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.scss']
 })
 export class UserListComponent implements OnInit {
   private userService = inject(UserService);
-  private authService = inject(AuthService);
   private toastService = inject(ToastService);
-
-  username = this.authService.username;
 
   users = signal<UserResponse[]>([]);
   loading = signal(true);
@@ -147,6 +144,4 @@ export class UserListComponent implements OnInit {
   get pages(): number[] {
     return Array.from({ length: this.totalPages() }, (_, i) => i);
   }
-
-  logout(): void { this.authService.logout(); }
 }
