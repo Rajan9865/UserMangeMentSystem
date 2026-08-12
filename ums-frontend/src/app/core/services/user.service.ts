@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { UserRequest, UserResponse, Role } from '../../models/user.model';
+import { UserRequest, UserResponse, Role, ChangePasswordRequest, UpdateProfileRequest } from '../../models/user.model';
 import { ApiResult, PageResult } from '../../models/api-result.model';
 import { environment } from '../../../environments/environment';
 
@@ -44,4 +44,13 @@ export class UserService {
   updateUserRole(id: number, role: Role): Observable<ApiResult<UserResponse>> {
     return this.http.put<ApiResult<UserResponse>>(`${this.apiUrl}/${id}/role`, role);
   }
+
+  changePassword(id: number, request: ChangePasswordRequest): Observable<ApiResult<null>> {
+    return this.http.patch<ApiResult<null>>(`${this.apiUrl}/${id}/password`, request);
+  }
+
+  updateProfile(id: number, request: UpdateProfileRequest): Observable<ApiResult<UserResponse>> {
+    return this.http.patch<ApiResult<UserResponse>>(`${this.apiUrl}/${id}/profile`, request);
+  }
 }
+
