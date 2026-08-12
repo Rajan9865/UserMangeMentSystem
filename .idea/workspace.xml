@@ -4,7 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5feadfcc-c318-4616-8faa-3a70b2d1b340" name="Changes" comment="usermangement systemmm" />
+    <list default="true" id="5feadfcc-c318-4616-8faa-3a70b2d1b340" name="Changes" comment="application.properties">
+      <change afterPath="$PROJECT_DIR$/.idea/intellij-javadocs-4.0.1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-management-system/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ums-frontend/src/app/core/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ums-frontend/src/app/core/services/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ums-frontend/src/app/models/user.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ums-frontend/src/app/models/user.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ums-frontend/src/app/pages/users/user-form/user-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ums-frontend/src/app/pages/users/user-form/user-form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ums-frontend/src/app/pages/users/user-form/user-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ums-frontend/src/app/pages/users/user-form/user-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ums-frontend/src/app/pages/users/user-list/user-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ums-frontend/src/app/pages/users/user-list/user-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ums-frontend/src/app/pages/users/user-list/user-list.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/ums-frontend/src/app/pages/users/user-list/user-list.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ums-frontend/src/app/pages/users/user-list/user-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ums-frontend/src/app/pages/users/user-list/user-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-system/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-system/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-system/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-system/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-system/src/main/java/com/usermanagement/user_management_system/common/response/constants/ErrorCodes.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-system/src/main/java/com/usermanagement/user_management_system/common/response/constants/ErrorCodes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-system/src/main/java/com/usermanagement/user_management_system/config/OpenApiConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-system/src/main/java/com/usermanagement/user_management_system/config/OpenApiConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-system/src/main/java/com/usermanagement/user_management_system/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-system/src/main/java/com/usermanagement/user_management_system/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-system/src/main/java/com/usermanagement/user_management_system/security/config/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-system/src/main/java/com/usermanagement/user_management_system/security/config/DataInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-system/src/main/java/com/usermanagement/user_management_system/security/jwt/JwtProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-system/src/main/java/com/usermanagement/user_management_system/security/jwt/JwtProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-system/src/main/java/com/usermanagement/user_management_system/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-system/src/main/java/com/usermanagement/user_management_system/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-system/src/main/java/com/usermanagement/user_management_system/service/impl/DatabaseUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-system/src/main/java/com/usermanagement/user_management_system/service/impl/DatabaseUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-system/src/test/java/com/usermanagement/user_management_system/UserManagementSystemApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-system/src/test/java/com/usermanagement/user_management_system/UserManagementSystemApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-system/target/classes/com/usermanagement/user_management_system/common/response/constants/ErrorCodes.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-system/target/classes/com/usermanagement/user_management_system/common/response/constants/ErrorCodes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-system/target/classes/com/usermanagement/user_management_system/config/OpenApiConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-system/target/classes/com/usermanagement/user_management_system/config/OpenApiConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-system/target/classes/com/usermanagement/user_management_system/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-system/target/classes/com/usermanagement/user_management_system/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-system/target/classes/com/usermanagement/user_management_system/exception/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-system/target/classes/com/usermanagement/user_management_system/exception/GlobalExceptionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-system/target/classes/com/usermanagement/user_management_system/security/jwt/JwtProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-system/target/classes/com/usermanagement/user_management_system/security/jwt/JwtProperties.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-system/target/classes/com/usermanagement/user_management_system/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-system/target/classes/com/usermanagement/user_management_system/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-system/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-system/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-system/target/surefire-reports/TEST-com.usermanagement.user_management_system.UserManagementSystemApplicationTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-system/target/test-classes/com/usermanagement/user_management_system/UserManagementSystemApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-system/target/test-classes/com/usermanagement/user_management_system/UserManagementSystemApplicationTests.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,7 +43,11 @@
   <component name="CopilotPersistence">
     <persistenceIdMap>
       <entry key="_D:/IntellijeIdea/fullstack" value="3H8Ljv1GB1Tf1FEtU3ONlNBv7Fl" />
+      <entry key="_D:/IntellijeIdea/fullstack/user-management-system" value="3HB1Lk6wmrSzNsJCwJXpOoZJsuv" />
     </persistenceIdMap>
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="76" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,23 +77,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.2762233999409576" />
-      <entry key="MS500" value="3.4752263870200384" />
-      <entry key="S2" value="8.179282839218011" />
-      <entry key="S5" value="16.167688942334934" />
-      <entry key="S10" value="24.280359219303964" />
-      <entry key="S30" value="35.35725600404456" />
-      <entry key="S60" value="43.51895323059756" />
-      <entry key="M2" value="53.438363217223085" />
-      <entry key="M5" value="64.2987813646756" />
-      <entry key="M10" value="69.42532842760393" />
-      <entry key="M15" value="71.40858060886731" />
-      <entry key="M30" value="73.58174583575689" />
-      <entry key="H1" value="74.7579003971391" />
-      <entry key="H2" value="75.53244319046104" />
-      <entry key="H4" value="77.1416891232958" />
-      <entry key="D1" value="84.97630236159647" />
-      <entry key="W1" value="88.33287902073852" />
+      <entry key="MS100" value="1.9462762995355303" />
+      <entry key="MS500" value="4.835375725904075" />
+      <entry key="S2" value="8.379099093839042" />
+      <entry key="S5" value="12.617422026960671" />
+      <entry key="S10" value="16.292386162500044" />
+      <entry key="S30" value="20.288106732684465" />
+      <entry key="S60" value="21.572838878565534" />
+      <entry key="M2" value="22.26759122531621" />
+      <entry key="M5" value="22.702379577074876" />
+      <entry key="M10" value="22.85040181984623" />
+      <entry key="M15" value="22.900091889336938" />
+      <entry key="M30" value="22.949957726715013" />
+      <entry key="H1" value="22.974986408474578" />
+      <entry key="H2" value="23.05239965078055" />
+      <entry key="H4" value="26.568544150934645" />
+      <entry key="D1" value="193.49202210725312" />
+      <entry key="W1" value="428.2401909002099" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -69,35 +103,35 @@
       <entry key="S10" value="0.0" />
       <entry key="S30" value="0.0" />
       <entry key="S60" value="0.0" />
-      <entry key="M2" value="0.0" />
-      <entry key="M5" value="0.0" />
-      <entry key="M10" value="0.0" />
-      <entry key="M15" value="0.0" />
-      <entry key="M30" value="0.0" />
-      <entry key="H1" value="0.0" />
-      <entry key="H2" value="0.0" />
-      <entry key="H4" value="0.0" />
-      <entry key="D1" value="0.0" />
-      <entry key="W1" value="0.0" />
+      <entry key="M2" value="5.663510597621475E-182" />
+      <entry key="M5" value="3.1713775545041746E-73" />
+      <entry key="M10" value="5.6943758770129224E-37" />
+      <entry key="M15" value="7.360261702977394E-25" />
+      <entry key="M30" value="1.2907685241043586E-12" />
+      <entry key="H1" value="2.275348052687589E-6" />
+      <entry key="H2" value="0.003343794270200004" />
+      <entry key="H4" value="0.13646008187050787" />
+      <entry key="D1" value="4.632818381457004" />
+      <entry key="W1" value="10.381038956124938" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.2250275254531895" />
-      <entry key="MS500" value="3.4484174213484042" />
-      <entry key="S2" value="8.161997892489529" />
-      <entry key="S5" value="16.15226175161406" />
-      <entry key="S10" value="24.267816785057" />
-      <entry key="S30" value="35.35063332806602" />
-      <entry key="S60" value="43.51456621465456" />
-      <entry key="M2" value="53.435467570646054" />
-      <entry key="M5" value="64.29730741078166" />
-      <entry key="M10" value="69.42451599020825" />
-      <entry key="M15" value="71.40801939699305" />
-      <entry key="M30" value="73.58145445094353" />
-      <entry key="H1" value="74.75775177334931" />
-      <entry key="H2" value="75.53236778820357" />
-      <entry key="H4" value="77.1416499213676" />
-      <entry key="D1" value="84.97629452972218" />
-      <entry key="W1" value="88.33287782182532" />
+      <entry key="MS100" value="1.8691128125739003" />
+      <entry key="MS500" value="4.776176981566796" />
+      <entry key="S2" value="8.351891621172399" />
+      <entry key="S5" value="12.600745713508003" />
+      <entry key="S10" value="16.28135330967608" />
+      <entry key="S30" value="20.28342022720522" />
+      <entry key="S60" value="21.57033104768169" />
+      <entry key="M2" value="22.26629261600946" />
+      <entry key="M5" value="22.701848919639136" />
+      <entry key="M10" value="22.85013458012882" />
+      <entry key="M15" value="22.89991330169103" />
+      <entry key="M30" value="22.949868218179095" />
+      <entry key="H1" value="22.974943874411668" />
+      <entry key="H2" value="23.05572011052839" />
+      <entry key="H4" value="26.704974456614504" />
+      <entry key="D1" value="198.12471934769832" />
+      <entry key="W1" value="438.62118951449617" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -123,31 +157,48 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "Spring Boot.UserManagementSystemApplication.executor": "Run",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "copilot.chat.legacySessionMetadata.migrated": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/IntellijeIdea/fullstack",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable",
-    "ts.external.directory.path": "D:\\IntellijeIdea\\fullstack\\ums-frontend\\node_modules\\typescript\\lib"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.UserRequestDto.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.user-management-system [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.user-management-system [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.user-management-system [install].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;Spring Boot.UserManagementSystemApplication.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;copilot.chat.legacySessionMetadata.migrated&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/IntellijeIdea/fullstack&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\lenovo\\AppData\\Roaming\\JetBrains\\IntelliJIdea2026.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RunManager" selected="Spring Boot.UserManagementSystemApplication">
+    <configuration name="UserRequestDto" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.usermanagement.user_management_system.dto.UserRequestDto" />
+      <module name="user-management-system" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.usermanagement.user_management_system.dto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -174,14 +225,15 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.UserManagementSystemApplication" />
+        <item itemvalue="Application.UserRequestDto" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-63390994e64e-intellij.indexing.shared.core-IU-262.8665.337" />
-        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.8665.337" />
+        <option value="bundled-jdk-30f59d01ecdd-34e2839f716b-intellij.indexing.shared.core-IU-262.9437.185" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.9437.185" />
       </set>
     </attachedChunks>
   </component>
@@ -192,38 +244,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1785244887455</updated>
-    </task>
-    <task id="LOCAL-00001" summary="usermangement system">
-      <option name="closed" value="true" />
-      <created>1785245683446</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1785245683446</updated>
-    </task>
-    <task id="LOCAL-00002" summary="usermangement system">
-      <option name="closed" value="true" />
-      <created>1785245686022</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1785245686022</updated>
-    </task>
-    <task id="LOCAL-00003" summary="usermangement system">
-      <option name="closed" value="true" />
-      <created>1785245688007</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1785245688007</updated>
-    </task>
-    <task id="LOCAL-00004" summary="usermangement system">
-      <option name="closed" value="true" />
-      <created>1785245699302</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1785245699302</updated>
     </task>
     <task id="LOCAL-00005" summary="usermangement system">
       <option name="closed" value="true" />
@@ -425,7 +445,199 @@
       <option name="project" value="LOCAL" />
       <updated>1785299535899</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="application.properties">
+      <option name="closed" value="true" />
+      <created>1785475887821</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1785475887821</updated>
+    </task>
+    <task id="LOCAL-00031" summary="application.properties">
+      <option name="closed" value="true" />
+      <created>1785475895093</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1785475895093</updated>
+    </task>
+    <task id="LOCAL-00032" summary="application.properties">
+      <option name="closed" value="true" />
+      <created>1785475905197</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1785475905197</updated>
+    </task>
+    <task id="LOCAL-00033" summary="application.properties">
+      <option name="closed" value="true" />
+      <created>1785475912913</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1785475912913</updated>
+    </task>
+    <task id="LOCAL-00034" summary="application.properties">
+      <option name="closed" value="true" />
+      <created>1785475989501</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1785475989501</updated>
+    </task>
+    <task id="LOCAL-00035" summary="application.properties">
+      <option name="closed" value="true" />
+      <created>1785476002027</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1785476002027</updated>
+    </task>
+    <task id="LOCAL-00036" summary="application.properties">
+      <option name="closed" value="true" />
+      <created>1785992580951</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1785992580951</updated>
+    </task>
+    <task id="LOCAL-00037" summary="application.properties">
+      <option name="closed" value="true" />
+      <created>1785992588705</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1785992588705</updated>
+    </task>
+    <task id="LOCAL-00038" summary="application.properties">
+      <option name="closed" value="true" />
+      <created>1785992593934</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1785992593934</updated>
+    </task>
+    <task id="LOCAL-00039" summary="application.properties">
+      <option name="closed" value="true" />
+      <created>1786352975779</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1786352975779</updated>
+    </task>
+    <task id="LOCAL-00040" summary="application.properties">
+      <option name="closed" value="true" />
+      <created>1786352986266</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1786352986266</updated>
+    </task>
+    <task id="LOCAL-00041" summary="application.properties">
+      <option name="closed" value="true" />
+      <created>1786352991897</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1786352991897</updated>
+    </task>
+    <task id="LOCAL-00042" summary="application.properties">
+      <option name="closed" value="true" />
+      <created>1786353000734</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1786353000734</updated>
+    </task>
+    <task id="LOCAL-00043" summary="application.properties">
+      <option name="closed" value="true" />
+      <created>1786353005192</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1786353005192</updated>
+    </task>
+    <task id="LOCAL-00044" summary="application.properties">
+      <option name="closed" value="true" />
+      <created>1786353010653</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1786353010653</updated>
+    </task>
+    <task id="LOCAL-00045" summary="application.properties">
+      <option name="closed" value="true" />
+      <created>1786444931064</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1786444931064</updated>
+    </task>
+    <task id="LOCAL-00046" summary="application.properties">
+      <option name="closed" value="true" />
+      <created>1786519285867</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1786519285867</updated>
+    </task>
+    <task id="LOCAL-00047" summary="application.properties">
+      <option name="closed" value="true" />
+      <created>1786519293919</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1786519293919</updated>
+    </task>
+    <task id="LOCAL-00048" summary="application.properties">
+      <option name="closed" value="true" />
+      <created>1786519300655</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1786519300655</updated>
+    </task>
+    <task id="LOCAL-00049" summary="application.properties">
+      <option name="closed" value="true" />
+      <created>1786519312438</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1786519312438</updated>
+    </task>
+    <task id="LOCAL-00050" summary="application.properties">
+      <option name="closed" value="true" />
+      <created>1786519320973</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1786519320973</updated>
+    </task>
+    <task id="LOCAL-00051" summary="application.properties">
+      <option name="closed" value="true" />
+      <created>1786519329373</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1786519329374</updated>
+    </task>
+    <task id="LOCAL-00052" summary="application.properties">
+      <option name="closed" value="true" />
+      <created>1786519343092</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1786519343093</updated>
+    </task>
+    <task id="LOCAL-00053" summary="application.properties">
+      <option name="closed" value="true" />
+      <created>1786519351591</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1786519351592</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -434,6 +646,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="usermangement system" />
     <MESSAGE value="usermangement systemmm" />
-    <option name="LAST_COMMIT_MESSAGE" value="usermangement systemmm" />
+    <MESSAGE value="application.properties" />
+    <option name="LAST_COMMIT_MESSAGE" value="application.properties" />
   </component>
 </project>
