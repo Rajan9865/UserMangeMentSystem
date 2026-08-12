@@ -2,6 +2,8 @@ package com.usermanagement.user_management_system.service;
 
 import com.usermanagement.user_management_system.dto.UserRequestDto;
 import com.usermanagement.user_management_system.dto.UserResponseDto;
+import com.usermanagement.user_management_system.dto.request.ChangePasswordRequest;
+import com.usermanagement.user_management_system.dto.request.UpdateProfileRequest;
 import com.usermanagement.user_management_system.enums.Role;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -29,4 +31,8 @@ public interface UserService {
     List<UserResponseDto> searchUsers(String username);
 
     UserResponseDto updateUserRole(Long id, Role role);
+
+    void changePassword(Long id, ChangePasswordRequest request);
+
+    UserResponseDto updateProfile(Long id, UpdateProfileRequest request);
 }
