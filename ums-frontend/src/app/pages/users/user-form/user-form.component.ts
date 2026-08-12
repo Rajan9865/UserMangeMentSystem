@@ -3,25 +3,22 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { UserService } from '../../../core/services/user.service';
-import { AuthService } from '../../../core/services/auth.service';
 import { ToastService } from '../../../core/services/toast.service';
 import { UserRequest } from '../../../models/user.model';
+import { SidebarComponent } from '../../../shared/sidebar/sidebar.component';
 
 @Component({
   selector: 'app-user-form',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink],
+  imports: [CommonModule, FormsModule, RouterLink, SidebarComponent],
   templateUrl: './user-form.component.html',
   styleUrls: ['./user-form.component.scss']
 })
 export class UserFormComponent implements OnInit {
   private userService = inject(UserService);
-  private authService = inject(AuthService);
   private toastService = inject(ToastService);
   private route = inject(ActivatedRoute);
   private router = inject(Router);
-
-  username = this.authService.username;
 
   isEditMode = signal(false);
   userId = signal<number | null>(null);
@@ -101,6 +98,4 @@ export class UserFormComponent implements OnInit {
   togglePassword(): void { this.showPassword.update(v => !v); }
 
   getError(field: string): string { return this.validationErrors()[field] ?? ''; }
-
-  logout(): void { this.authService.logout(); }
 }
