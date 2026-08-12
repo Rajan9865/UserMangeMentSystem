@@ -11,5 +11,6 @@ public interface ErrorCodes {
     String USER_ALREADY_EXISTS = "USER_409";
     String VALIDATION_ERROR = "VALIDATION_400";
     String INTERNAL_SERVER_ERROR = "SERVER_500";
+    String WRONG_PASSWORD = "AUTH_401";
 
 }
