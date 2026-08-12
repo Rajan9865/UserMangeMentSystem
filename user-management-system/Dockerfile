@@ -45,7 +45,7 @@ RUN chown -R appuser:appgroup /app
 USER appuser
 
 # Expose the application port
-EXPOSE 8080
+EXPOSE 8080 3306
 
 # Health check using Spring Boot Actuator
 # Checks every 30s, 10s timeout, 3 retries, 40s start period for JVM warmup
