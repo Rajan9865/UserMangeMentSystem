@@ -1,9 +1,9 @@
 import { Component, inject, signal, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterLink } from '@angular/router';
-import { AuthService } from '../../core/services/auth.service';
+import { RouterLink } from '@angular/router';
 import { UserService } from '../../core/services/user.service';
 import { UserResponse } from '../../models/user.model';
+import { SidebarComponent } from '../../shared/sidebar/sidebar.component';
 
 interface StatCard {
   label: string;
@@ -16,18 +16,15 @@ interface StatCard {
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, SidebarComponent],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
   private userService = inject(UserService);
-  private authService = inject(AuthService);
-  private router = inject(Router);
-
-  username = this.authService.username;
   loading = signal(true);
   recentUsers = signal<UserResponse[]>([]);
+  username=signal('Admin');
 
   stats = signal<StatCard[]>([
     { label: 'Total Users', value: '—', icon: 'users', color: '#6366f1', subtitle: 'Registered accounts' },
@@ -62,10 +59,6 @@ export class DashboardComponent implements OnInit {
       },
       error: () => this.loading.set(false)
     });
-  }
-
-  logout(): void {
-    this.authService.logout();
   }
 
   getRoleBadgeClass(role: string): string {
