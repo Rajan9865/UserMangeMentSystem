@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author lenovo
+ * @author Rajan kumar
  * @version 1.0
  * Practise_Project
  * @since 7/21/2026
