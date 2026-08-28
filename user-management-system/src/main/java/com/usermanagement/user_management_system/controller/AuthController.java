@@ -33,7 +33,7 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<ApiResult<LoginResponse>> login(@Valid @RequestBody LoginRequest request
             , HttpServletRequest httpRequest) {
-        log.info("welcome to chandshekhar kumar vhjsdjv:{}", request);
+        log.info("welcome to Rajan bhai vhjsdjv:{}", request);
         LoginResponse response = authService.login(request);
         return ResponseEntity.ok(ResponseUtil.success(response
                 , "login successfully  chandshekhar  kumar verma", HttpStatus.OK, httpRequest.getRequestURI()
