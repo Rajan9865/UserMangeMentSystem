@@ -14,16 +14,16 @@ services:
       retries: 10
     volumes:
       - mysql_data:/var/lib/mysql
-  app:
-    image: rajan06166/usermanagementsystem:${IMAGE_TAG}
-    depends_on:
-      mysql:
-        condition: service_healthy
-    environment:
-      DB_URL: jdbc:mysql://mysql:3306/userdb
-      DB_USERNAME: root
-      DB_PASSWORD: root
-    ports:
-      - "8080:8080"
+#  app:
+#    image: rajan06166/usermanagementsystem:${IMAGE_TAG}
+#    depends_on:
+#      mysql:
+#        condition: service_healthy
+#    environment:
+#      DB_URL: jdbc:mysql://mysql:3306/userdb
+#      DB_USERNAME: root
+#      DB_PASSWORD: root
+#    ports:
+#      - "8080:8080"
 volumes:
   mysql_data:

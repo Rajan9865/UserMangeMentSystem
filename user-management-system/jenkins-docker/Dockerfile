@@ -2,14 +2,12 @@ FROM jenkins/jenkins:lts
 
 USER root
 
-RUN apt-get update \
-    && apt-get install -y docker.io curl \
-    && curl -SL https://github.com/docker/compose/releases/download/v2.39.1/docker-compose-linux-x86_64 \
-       -o /usr/local/bin/docker-compose \
-    && chmod +x /usr/local/bin/docker-compose \
-    && docker-compose --version \
-    && docker --version \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+# Install Docker CLI, curl, and kubectl
+RUN apt-get update && \
+    apt-get install -y docker.io curl && \
+    curl -LO "https://dl.k8s.io/release/v1.37.0/bin/linux/amd64/kubectl" && \
+    install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl && \
+    rm kubectl && \
+    rm -rf /var/lib/apt/lists/*
 
 USER jenkins
