@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: usermanagementsystem
+
+  labels:
+    app: usermanagementsystem
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: usermanagementsystem
+
+  template:
+    metadata:
+      labels:
+        app: usermanagementsystem
+
+    spec:
+      containers:
+        - name: usermanagementsystem
+
+          image: rajan06166/usermanagementsystem:latest
+
+          imagePullPolicy: Always
+
+          ports:
+            - containerPort: 8080
+
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: db
+
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:mysql://mysql-service:3306/userdb
+
+            - name: SPRING_DATASOURCE_USERNAME
+              value: root
+
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: root
+
+            - name: SPRING_JPA_HIBERNATE_DDL_AUTO
+              value: update
