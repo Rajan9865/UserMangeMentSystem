@@ -9,6 +9,7 @@ import com.usermanagement.user_management_system.util.ResponseUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,12 +26,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/v1/auth")
 @RequiredArgsConstructor
+@Slf4j
 public class AuthController {
     private final AuthServices authService;
 
     @PostMapping("/login")
     public ResponseEntity<ApiResult<LoginResponse>> login(@Valid @RequestBody LoginRequest request
             , HttpServletRequest httpRequest) {
+        log.info("welcome to chandshekhar kumar vhjsdjv:{}", request);
         LoginResponse response = authService.login(request);
         return ResponseEntity.ok(ResponseUtil.success(response
                 , "login successfully  chandshekhar  kumar verma", HttpStatus.OK, httpRequest.getRequestURI()
