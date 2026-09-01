@@ -23,7 +23,7 @@ spec:
       containers:
         - name: usermanagementsystem
 
-          image: rajan06166/usermanagementsystem:latest
+          image: rajan06166/usermanagementsystem:IMAGE_TAG
 
           imagePullPolicy: Always
 
