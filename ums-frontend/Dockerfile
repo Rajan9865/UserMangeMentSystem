@@ -28,8 +28,8 @@ COPY nginx.conf.template /etc/nginx/templates/default.conf.template
 
 # Defaults — override with `docker run -e BACKEND_HOST=... -e BACKEND_PORT=...`
 # or via docker-compose environment settings.
-#ENV BACKEND_HOST=usermanagementsystem-service
-#ENV BACKEND_PORT=8080
+ENV BACKEND_HOST=usermanagementsystem-service
+ENV BACKEND_PORT=8080
 
 EXPOSE 80
 
