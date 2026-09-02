@@ -6,8 +6,7 @@ spec:
   ingressClassName: nginx
 
   rules:
-    - host: localhost
-      http:
+    - http:
         paths:
 
           # Backend API
