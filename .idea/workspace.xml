@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5feadfcc-c318-4616-8faa-3a70b2d1b340" name="Changes" comment="log info">
-      <change afterPath="$PROJECT_DIR$/ums-frontend/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ums-frontend/dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ums-frontend/nginx.conf.template" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-system/k8s/frontend-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-system/k8s/frontend-service.yaml" afterDir="false" />
+    <list default="true" id="5feadfcc-c318-4616-8faa-3a70b2d1b340" name="Changes" comment="cors origin fixed">
+      <change afterPath="$PROJECT_DIR$/user-management-system/k8s/ums-ingress.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-management-system/k8s/usermanagementsystem-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-system/k8s/usermanagementsystem-deployment.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-management-system/target/surefire-reports/2026-08-11T16-10-34_878.dumpstream" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-management-system/target/user-management-system-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-system/target/user-management-system-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-management-system/target/user-management-system-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-system/target/user-management-system-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ums-frontend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/ums-frontend/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ums-frontend/nginx.conf.template" beforeDir="false" afterPath="$PROJECT_DIR$/ums-frontend/nginx.conf.template" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,61 +52,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.3121230559423442" />
-      <entry key="MS500" value="3.819231411624663" />
-      <entry key="S2" value="8.125757960612503" />
-      <entry key="S5" value="11.825508906537113" />
-      <entry key="S10" value="15.29773903287831" />
-      <entry key="S30" value="19.818209038527876" />
-      <entry key="S60" value="22.05197513956519" />
-      <entry key="M2" value="24.167438516852332" />
-      <entry key="M5" value="26.99078497548447" />
-      <entry key="M10" value="29.59259582749359" />
-      <entry key="M15" value="31.604748782737595" />
-      <entry key="M30" value="37.18138030049237" />
-      <entry key="H1" value="46.94108477311161" />
-      <entry key="H2" value="58.47983093649744" />
-      <entry key="H4" value="70.20715174623845" />
-      <entry key="D1" value="238.17410678956185" />
-      <entry key="W1" value="482.1041777503144" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0" />
+      <entry key="S30" value="1.0000000395159594" />
+      <entry key="S60" value="1.00021556358306" />
+      <entry key="M2" value="1.0287881440700404" />
+      <entry key="M5" value="2.041840345572365" />
+      <entry key="M10" value="4.780510866916161" />
+      <entry key="M15" value="6.898707370424653" />
+      <entry key="M30" value="10.77762674095066" />
+      <entry key="H1" value="17.475849579756495" />
+      <entry key="H2" value="32.635404965430425" />
+      <entry key="H4" value="54.88437607528388" />
+      <entry key="D1" value="233.31309767547157" />
+      <entry key="W1" value="493.94087019466923" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="1.8061945515876642E-98" />
-      <entry key="S2" value="3.6659887844790005E-25" />
-      <entry key="S5" value="1.681420944173773E-10" />
-      <entry key="S10" value="1.2966961649414151E-5" />
-      <entry key="S30" value="0.023493410948485127" />
-      <entry key="S60" value="0.1532756573541566" />
-      <entry key="M2" value="0.39182900337263227" />
-      <entry key="M5" value="0.7489686968420739" />
-      <entry key="M10" value="1.21764429694596" />
-      <entry key="M15" value="1.653276792392212" />
-      <entry key="M30" value="2.5976694518320445" />
-      <entry key="H1" value="3.5040950139286777" />
-      <entry key="H2" value="4.157286563997051" />
-      <entry key="H4" value="4.6423703781234655" />
-      <entry key="D1" value="9.260640872148482" />
-      <entry key="W1" value="15.273181992631578" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="2.730709060151358E-291" />
+      <entry key="S10" value="5.225618681219817E-146" />
+      <entry key="S30" value="3.738630734329422E-49" />
+      <entry key="S60" value="6.114434343689873E-25" />
+      <entry key="M2" value="7.819484857514509E-13" />
+      <entry key="M5" value="1.4363863167903035E-5" />
+      <entry key="M10" value="0.003790342908556059" />
+      <entry key="M15" value="0.024383724288501368" />
+      <entry key="M30" value="0.17344090868994907" />
+      <entry key="H1" value="0.6827062043611047" />
+      <entry key="H2" value="1.8199059332992549" />
+      <entry key="H4" value="3.278050120064344" />
+      <entry key="D1" value="9.306815988802771" />
+      <entry key="W1" value="16.04213659422963" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.2499357295750892" />
-      <entry key="MS500" value="3.781672542637912" />
-      <entry key="S2" value="8.104937734866267" />
-      <entry key="S5" value="11.811775324285096" />
-      <entry key="S10" value="15.2879278900121" />
-      <entry key="S30" value="19.830671122935925" />
-      <entry key="S60" value="22.18166479325762" />
-      <entry key="M2" value="24.530650979797855" />
-      <entry key="M5" value="27.718163974683513" />
-      <entry key="M10" value="30.79539320176958" />
-      <entry key="M15" value="33.246529162131495" />
-      <entry key="M30" value="39.77201457000523" />
-      <entry key="H1" value="50.44112655345274" />
-      <entry key="H2" value="62.63489616082793" />
-      <entry key="H4" value="74.84833759292059" />
-      <entry key="D1" value="247.434430502877" />
-      <entry key="W1" value="497.3772904214482" />
+      <entry key="MS100" value="0.8766057213160351" />
+      <entry key="MS500" value="0.974004268543241" />
+      <entry key="S2" value="0.9934367347173356" />
+      <entry key="S5" value="0.9973695065410157" />
+      <entry key="S10" value="0.9986838871940489" />
+      <entry key="S30" value="0.9995611426267662" />
+      <entry key="S60" value="0.9999960387017105" />
+      <entry key="M2" value="1.0286738235237698" />
+      <entry key="M5" value="2.0417316042409634" />
+      <entry key="M10" value="4.784127668533183" />
+      <entry key="M15" value="6.922908126786884" />
+      <entry key="M30" value="10.950848729062942" />
+      <entry key="H1" value="18.158087883762327" />
+      <entry key="H2" value="34.454585294291896" />
+      <entry key="H4" value="58.16174028637631" />
+      <entry key="D1" value="242.61961801351165" />
+      <entry key="W1" value="509.9829370492257" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -138,34 +132,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.UserRequestDto.executor": "Run",
-    "Maven.user-management-system [clean,install].executor": "Run",
-    "Maven.user-management-system [clean].executor": "Run",
-    "Maven.user-management-system [install].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "Spring Boot.UserManagementSystemApplication.executor": "Run",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "copilot.chat.legacySessionMetadata.migrated": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/IntellijeIdea/fullstack/ums-frontend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA Community Edition 2025.1.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.UserRequestDto.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.user-management-system [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.user-management-system [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.user-management-system [install].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;Spring Boot.UserManagementSystemApplication.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;copilot.chat.legacySessionMetadata.migrated&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/IntellijeIdea/fullstack/ums-frontend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA Community Edition 2025.1.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\IntellijeIdea\fullstack\ums-frontend" />
@@ -231,38 +225,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1785244887455</updated>
-    </task>
-    <task id="LOCAL-00043" summary="application.properties">
-      <option name="closed" value="true" />
-      <created>1786353005192</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1786353005192</updated>
-    </task>
-    <task id="LOCAL-00044" summary="application.properties">
-      <option name="closed" value="true" />
-      <created>1786353010653</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1786353010653</updated>
-    </task>
-    <task id="LOCAL-00045" summary="application.properties">
-      <option name="closed" value="true" />
-      <created>1786444931064</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1786444931064</updated>
-    </task>
-    <task id="LOCAL-00046" summary="application.properties">
-      <option name="closed" value="true" />
-      <created>1786519285867</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1786519285867</updated>
     </task>
     <task id="LOCAL-00047" summary="application.properties">
       <option name="closed" value="true" />
@@ -624,7 +586,39 @@
       <option name="project" value="LOCAL" />
       <updated>1787903540383</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="usermanagementsystem-deployment.yaml">
+      <option name="closed" value="true" />
+      <created>1788260891743</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1788260891743</updated>
+    </task>
+    <task id="LOCAL-00093" summary="usermanagementsystem-deployment.yaml">
+      <option name="closed" value="true" />
+      <created>1788263639803</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1788263639803</updated>
+    </task>
+    <task id="LOCAL-00094" summary="nginx.conf.template">
+      <option name="closed" value="true" />
+      <created>1788267088596</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1788267088596</updated>
+    </task>
+    <task id="LOCAL-00095" summary="cors origin fixed">
+      <option name="closed" value="true" />
+      <created>1788270728972</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1788270728972</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -680,7 +674,10 @@
     <MESSAGE value="application-db.properties" />
     <MESSAGE value="yml file for kubernates" />
     <MESSAGE value="log info" />
-    <option name="LAST_COMMIT_MESSAGE" value="log info" />
+    <MESSAGE value="usermanagementsystem-deployment.yaml" />
+    <MESSAGE value="nginx.conf.template" />
+    <MESSAGE value="cors origin fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="cors origin fixed" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
