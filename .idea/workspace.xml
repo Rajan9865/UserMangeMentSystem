@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5feadfcc-c318-4616-8faa-3a70b2d1b340" name="Changes" comment="cors origin fixed">
-      <change afterPath="$PROJECT_DIR$/user-management-system/k8s/ums-ingress.yaml" afterDir="false" />
+    <list default="true" id="5feadfcc-c318-4616-8faa-3a70b2d1b340" name="Changes" comment="ngnix confg templates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ums-frontend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/ums-frontend/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ums-frontend/nginx.conf.template" beforeDir="false" afterPath="$PROJECT_DIR$/ums-frontend/nginx.conf.template" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,61 +49,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0" />
-      <entry key="S30" value="1.0000000395159594" />
-      <entry key="S60" value="1.00021556358306" />
-      <entry key="M2" value="1.0287881440700404" />
-      <entry key="M5" value="2.041840345572365" />
-      <entry key="M10" value="4.780510866916161" />
-      <entry key="M15" value="6.898707370424653" />
-      <entry key="M30" value="10.77762674095066" />
-      <entry key="H1" value="17.475849579756495" />
-      <entry key="H2" value="32.635404965430425" />
-      <entry key="H4" value="54.88437607528388" />
-      <entry key="D1" value="233.31309767547157" />
-      <entry key="W1" value="493.94087019466923" />
+      <entry key="MS100" value="1.0075861475594101" />
+      <entry key="MS500" value="1.5798707658485245" />
+      <entry key="S2" value="3.8325962521474852" />
+      <entry key="S5" value="6.277769213342216" />
+      <entry key="S10" value="8.628299537726196" />
+      <entry key="S30" value="12.375483262494669" />
+      <entry key="S60" value="13.966453760559236" />
+      <entry key="M2" value="14.983438699446554" />
+      <entry key="M5" value="16.439852855639792" />
+      <entry key="M10" value="18.045860172362374" />
+      <entry key="M15" value="19.01344603895575" />
+      <entry key="M30" value="21.038860690114078" />
+      <entry key="H1" value="25.78594122066108" />
+      <entry key="H2" value="38.49030863405873" />
+      <entry key="H4" value="61.34082443082709" />
+      <entry key="D1" value="242.9099571256707" />
+      <entry key="W1" value="512.1086831021676" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="2.730709060151358E-291" />
-      <entry key="S10" value="5.225618681219817E-146" />
-      <entry key="S30" value="3.738630734329422E-49" />
-      <entry key="S60" value="6.114434343689873E-25" />
-      <entry key="M2" value="7.819484857514509E-13" />
-      <entry key="M5" value="1.4363863167903035E-5" />
-      <entry key="M10" value="0.003790342908556059" />
-      <entry key="M15" value="0.024383724288501368" />
-      <entry key="M30" value="0.17344090868994907" />
-      <entry key="H1" value="0.6827062043611047" />
-      <entry key="H2" value="1.8199059332992549" />
-      <entry key="H4" value="3.278050120064344" />
-      <entry key="D1" value="9.306815988802771" />
-      <entry key="W1" value="16.04213659422963" />
+      <entry key="MS100" value="1.5028950380705669E-87" />
+      <entry key="MS500" value="4.319025121512249E-18" />
+      <entry key="S2" value="4.558756888160222E-5" />
+      <entry key="S5" value="0.01834588103671526" />
+      <entry key="S10" value="0.13544696761727545" />
+      <entry key="S30" value="0.51355831135018" />
+      <entry key="S60" value="0.7166298286773864" />
+      <entry key="M2" value="0.8465399155842482" />
+      <entry key="M5" value="0.9355327087682754" />
+      <entry key="M10" value="0.9672308927344534" />
+      <entry key="M15" value="0.9781629507341348" />
+      <entry key="M30" value="1.0016731364666194" />
+      <entry key="H1" value="1.179334135827954" />
+      <entry key="H2" value="1.9442656358807986" />
+      <entry key="H4" value="3.363306472306038" />
+      <entry key="D1" value="9.813524476647318" />
+      <entry key="W1" value="16.917840519772234" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.8766057213160351" />
-      <entry key="MS500" value="0.974004268543241" />
-      <entry key="S2" value="0.9934367347173356" />
-      <entry key="S5" value="0.9973695065410157" />
-      <entry key="S10" value="0.9986838871940489" />
-      <entry key="S30" value="0.9995611426267662" />
-      <entry key="S60" value="0.9999960387017105" />
-      <entry key="M2" value="1.0286738235237698" />
-      <entry key="M5" value="2.0417316042409634" />
-      <entry key="M10" value="4.784127668533183" />
-      <entry key="M15" value="6.922908126786884" />
-      <entry key="M30" value="10.950848729062942" />
-      <entry key="H1" value="18.158087883762327" />
-      <entry key="H2" value="34.454585294291896" />
-      <entry key="H4" value="58.16174028637631" />
-      <entry key="D1" value="242.61961801351165" />
-      <entry key="W1" value="509.9829370492257" />
+      <entry key="MS100" value="0.9532370233642466" />
+      <entry key="MS500" value="1.5634180512104823" />
+      <entry key="S2" value="3.823773305969366" />
+      <entry key="S5" value="6.289157252643722" />
+      <entry key="S10" value="8.754868650620836" />
+      <entry key="S30" value="12.880488423600992" />
+      <entry key="S60" value="14.677283462884917" />
+      <entry key="M2" value="15.826570379100229" />
+      <entry key="M5" value="17.373821016812247" />
+      <entry key="M10" value="19.01223888562052" />
+      <entry key="M15" value="19.991017067874523" />
+      <entry key="M30" value="22.04020795677506" />
+      <entry key="H1" value="26.96498945926113" />
+      <entry key="H2" value="40.43411591025517" />
+      <entry key="H4" value="64.70359541406683" />
+      <entry key="D1" value="252.72319478839907" />
+      <entry key="W1" value="529.0264534461984" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -225,46 +222,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1785244887455</updated>
-    </task>
-    <task id="LOCAL-00047" summary="application.properties">
-      <option name="closed" value="true" />
-      <created>1786519293919</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1786519293919</updated>
-    </task>
-    <task id="LOCAL-00048" summary="application.properties">
-      <option name="closed" value="true" />
-      <created>1786519300655</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1786519300655</updated>
-    </task>
-    <task id="LOCAL-00049" summary="application.properties">
-      <option name="closed" value="true" />
-      <created>1786519312438</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1786519312438</updated>
-    </task>
-    <task id="LOCAL-00050" summary="application.properties">
-      <option name="closed" value="true" />
-      <created>1786519320973</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1786519320973</updated>
-    </task>
-    <task id="LOCAL-00051" summary="application.properties">
-      <option name="closed" value="true" />
-      <created>1786519329373</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1786519329374</updated>
     </task>
     <task id="LOCAL-00052" summary="application.properties">
       <option name="closed" value="true" />
@@ -618,7 +575,47 @@
       <option name="project" value="LOCAL" />
       <updated>1788270728972</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="cors origin fixed">
+      <option name="closed" value="true" />
+      <created>1788344845571</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1788344845572</updated>
+    </task>
+    <task id="LOCAL-00097" summary="ingress conntroller">
+      <option name="closed" value="true" />
+      <created>1788350451593</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1788350451593</updated>
+    </task>
+    <task id="LOCAL-00098" summary="ingress conntroller">
+      <option name="closed" value="true" />
+      <created>1788350787626</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1788350787626</updated>
+    </task>
+    <task id="LOCAL-00099" summary="Dockerfile back to environment">
+      <option name="closed" value="true" />
+      <created>1788351392525</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1788351392525</updated>
+    </task>
+    <task id="LOCAL-00100" summary="ngnix confg templates">
+      <option name="closed" value="true" />
+      <created>1788351410398</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1788351410398</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -677,7 +674,10 @@
     <MESSAGE value="usermanagementsystem-deployment.yaml" />
     <MESSAGE value="nginx.conf.template" />
     <MESSAGE value="cors origin fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="cors origin fixed" />
+    <MESSAGE value="ingress conntroller" />
+    <MESSAGE value="Dockerfile back to environment" />
+    <MESSAGE value="ngnix confg templates" />
+    <option name="LAST_COMMIT_MESSAGE" value="ngnix confg templates" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
